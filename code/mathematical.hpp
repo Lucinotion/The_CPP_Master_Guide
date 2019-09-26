@@ -4,7 +4,7 @@
 // Header file for mathematical.cpp
 // Header files constain all de declarations for each function. They also contain documentation for each function
 
-// By doing this we check that this hasn't been included before
+// By doing this we check that this hasn't been included before, you could also use the preprocess pragma, but not all compilers support it
 #ifndef MATHEMATICAL_H
 #define MATHEMATICAL_H
 
@@ -25,6 +25,6 @@ public:
     static double Divide(double a, double b); // Returns a / b
 };
 
-} // namespace MathFuncs
+} // End of namespace MathFuncs
 
 #endif
