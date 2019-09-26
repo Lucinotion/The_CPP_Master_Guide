@@ -118,15 +118,6 @@ public:
     }
 };
 
-/*
-    FRIEND CLASSES
-*/
-// Allows for the access of private and protected members from other class
-class E
-{
-    friend class A;
-};
-
 int main()
 {
     return 0;
