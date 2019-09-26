@@ -10,13 +10,13 @@ private:
     std::string GenericString;
 
 public:
-    // Everything after this can be accessed anyware.
+    // Everything after this can be accessed anywhere.
 
     const int GenericInt{};     // CONST values are assigned when the object is made and can't be changed.
     mutable bool ready = false; // MUTABLE makes variables modificable even if the object has been created as const
-    static int instanceCount;   // STATIC members are independent from objects and they can be accessed without making a instance of the class.
+    static int instanceCount;   // STATIC members are independent from objects and they can be accessed without making a instance of the class. They must be accessed using the scope (::) operator. 
 
-    //  CONSTRUCTORS, called when an object of the class is created, everything after the : will execute before the constructor, this is the only way to assign constant values.
+    //  CONSTRUCTORS, called when an object of the class is created, everything after the : will execute before the constructor, this is the only way to assign constant values and references.
     exampleClass()
     {
         // Default constructor, empty.
@@ -33,7 +33,7 @@ public:
     {
         // This constructor has a MEMBER INITIALIZER LIST that sets GenericInt, GenericString and GenericDouble. This is the only way to set const values AND references.
     }
-    exampleClass(const exampleClass &exampleclass) // Always use reference_to_const or inifnite loop will happen
+    exampleClass(const exampleClass &exampleclass) // This is called a copy constructor. Always use reference_to_const or inifnite loop will happen.
     {
         // This is a copy constructor, so that you can do exampleClass newExampleClass {anotherExampleClass}; to make a new class that is a copy of another
         // By default the compiler already has a copy constructor that copies everything by value
@@ -45,21 +45,26 @@ public:
         GenericString = std::to_string(n);
     }
 
-    // DESTRUCTORS, called when the class object is deleted.
+    // DESTRUCTORS, called when the class object goes out of scope.
     ~exampleClass()
     {
         // You can also use ~exampleClass() = default; to force the compiler to make a default destructor.
     }
 
     // MEMBERS
-    double Sum() // A member is any function inside a class, also known as methods
+    double Sum() // A member is any function inside a class, also known as methods.
     {
         return GenericDouble * GenericInt;
     }
 
-    static void Speak() // STATIC members can be accessed without making an object of the class
+    static void Speak() // STATIC members can be accessed without making an object of the class.
     {
         std::cout << "Hello friend!";
+    }
+    
+    const void printInt() // CONST members cannot change the attributes of the class.
+    {
+        std::cout << GenericInt << std::endl;
     }
 
     // FRIEND FUNCTION DECLARATION
@@ -80,16 +85,17 @@ public:
     }
 
     // GETTERS get the value of a variable
-    double getDouble() const // CONST members are members that can be accessed even from const objects because they don't modify the object
+    double getDouble() const // CONST members are members that can be accessed even from const objects because they don't modify the object.
     {
         return GenericDouble;
     }
-    bool isReady() const // You should allways make const the members that don't modify the object
+    bool isReady() const // You should allways make const the members that don't modify the object.
     {
         return ready;
     }
 
     // OPERATORS
+    // You can overload operators so that they work with instances of your class.
     /*
         Binary arithmetic operators +  -  *  /  %
         Unary arithmetic operators +  -
@@ -105,19 +111,19 @@ public:
         Address-of and dereferencing operators &  *  ->  ->*
         Comma operator ,
     */
-    int operator+(const exampleClass &ex) const // addition operation
+    int operator+(const exampleClass &ex) const // Addition operation.
     {
         return ex.GenericInt + GenericInt;
     }
-    bool operator==(const exampleClass &ex) const // equals operator
+    bool operator==(const exampleClass &ex) const // Equals operator.
     {
         return ex.GenericInt == GenericInt;
     }
-    exampleClass *operator[](size_t index) // index operator
+    exampleClass *operator[](size_t index) // Index operator.
     {
         return this;
     }
-    operator double() const // conversion to double operator
+    operator double() const // Conversion to double operator.
     {
         return GenericDouble;
     }
@@ -141,11 +147,11 @@ int main()
     const exampleClass anotherExample(10);      // Creating a constant instance, or object, of the class. Only const member are accesible and only mutable fields can be changed.
     auto otherExample = new exampleClass(10.5); // Creating a pointer and assigning a new instance, or object, of the class to it.
 
-    example.setDouble(5.5);                              // Accessing members of object
-    std::cout << otherExample->getDouble() << std::endl; // Accessing members of object with pointer
-    std::cout << anotherExample.isReady() << std::endl;  // Accessing const members of const object
-    std::cout << example + anotherExample << std::endl;  // Using a overloaded operator
-    exampleClass::Speak();                               // Calling a static member
+    example.setDouble(5.5);                              // Accessing members of object.
+    std::cout << otherExample->getDouble() << std::endl; // Accessing members of object with pointer.
+    std::cout << anotherExample.isReady() << std::endl;  // Accessing const members of const object.
+    std::cout << example + anotherExample << std::endl;  // Using a overloaded operator.
+    exampleClass::Speak();                               // Calling a static member.
     IncreaseDouble(example);
 
     return 0;
