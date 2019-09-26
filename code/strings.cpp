@@ -7,8 +7,8 @@ int main()
     setlocale(LC_ALL, "spanish"); // Allows the display of extended ASCII in the command line
 
     /*
-		CHAR ARRAYS
-	*/
+        CHAR ARRAYS
+    */
     // C style string
     char cString1[5] = {'h', 'e', 'l', 'l', 'o'}; // char *var is the same as char var[], in both cases var is a pointer to the first letter
     char cString2[6] = {"hello"};
@@ -16,8 +16,8 @@ int main()
     char *cString4;                                                                   // Pointer to string
 
     /*
-		STRINGS
-	*/
+        STRINGS
+    */
     // C++ style strings
     std::string cppString1{"This is a better string, from the string header inside the standar library"};
     std::string cppString2 = "You can also use the assignation inicialization";
@@ -31,20 +31,20 @@ int main()
     std::string foolProofRawString{R"~(You don't need scape sequences here )( " \ / ' ? )~"}; // The ~ is the delimiter, you can use almost any character for it and it lets you put " and () inside without breaking the string
 
     /*
-		Escape sequences
+        Escape sequences
 
-		\n Newline
-		\t Horizontal tab
-		\v Vertical tab
-		\b Backspace
-		\r Carriage return
-		\f Form feed
-		\a Alert/bell
-		\0 null character, by default all strings contain one at the end or they will contain garbage data after the last character.
-		\\ backslash
-		\' single quote
-		\" double quote
-	*/
+        \n Newline
+        \t Horizontal tab
+        \v Vertical tab
+        \b Backspace
+        \r Carriage return
+        \f Form feed
+        \a Alert/bell
+        \0 null character, by default all strings contain one at the end or they will contain garbage data after the last character.
+        \\ backslash
+        \' single quote
+        \" double quote
+    */
 
     // Show and get C++ strings
     std::cout << "Write some text: ";

@@ -10,8 +10,8 @@ long longRetFunction(short shortInteger, int integer)
 int main()
 {
     /*
-		POINTERS
-	*/
+        POINTERS
+    */
     // A pointer contains the memory address to other specific type of data as its value
 
     // UNIDIMENSIONAL
@@ -42,8 +42,8 @@ int main()
     std::cout << pFunction(255, 12345) << std::endl; // Call the function
 
     /*
-		DEREFERENCE and ADDRESS
-	*/
+        DEREFERENCE and ADDRESS
+    */
     // The indirection or dereference operator, *(address), returns the value in that address
     // The address operator, &(value), returns the address of the value
 
@@ -60,8 +60,8 @@ int main()
     pVec->push_back(50); // Same as (*pVec).push_back(50)
 
     /*
-		FREEING MEMORY
-	*/
+        FREEING MEMORY
+    */
 
     delete pInt; // For values
     pInt = nullptr;

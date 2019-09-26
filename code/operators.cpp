@@ -1,120 +1,120 @@
 int main()
 {
-	/*
-		OPERATORS
-	*/
+    /*
+        OPERATORS
+    */
 
-	// ASSIGNMENT OPERATORS
-	// Assignation
-	int answer = 42;				   //assignment notation
-	int apple_count(4);				   //functional notation
-	int orange_count{8};			   //uniform initialization, gives better warinings and initializes in 0
-	int flowerCount{1}, scoreCount{3}; //multiple assignment with commas
+    // ASSIGNMENT OPERATORS
+    // Assignation
+    int answer = 42;				   //assignment notation
+    int apple_count(4);				   //functional notation
+    int orange_count{8};			   //uniform initialization, gives better warinings and initializes in 0
+    int flowerCount{1}, scoreCount{3}; //multiple assignment with commas
 
-	// Additive assignation
-	answer += 1;
+    // Additive assignation
+    answer += 1;
 
-	// Substractive assignation
-	answer -= 2;
+    // Substractive assignation
+    answer -= 2;
 
-	// Multiplicative assignation
-	answer *= 3;
+    // Multiplicative assignation
+    answer *= 3;
 
-	// Divisible assignation
-	answer /= 4;
+    // Divisible assignation
+    answer /= 4;
 
-	// Modulative assignation
-	answer %= 5;
+    // Modulative assignation
+    answer %= 5;
 
-	// UNARY OPERATIONS
-	// Increament
-	answer++;
-	++answer;
+    // UNARY OPERATIONS
+    // Increament
+    answer++;
+    ++answer;
 
-	// Decrement
-	answer--;
-	--answer;
+    // Decrement
+    answer--;
+    --answer;
 
-	// ARITHMETIC OPERATORS
-	// Addition
-	int additive = 1 + 1;
+    // ARITHMETIC OPERATORS
+    // Addition
+    int additive = 1 + 1;
 
-	// Substraction
-	int substractive = 3 - 1;
+    // Substraction
+    int substractive = 3 - 1;
 
-	// Multiplication
-	int multiplicative = 8 * 8;
+    // Multiplication
+    int multiplicative = 8 * 8;
 
-	// Division
-	int divisible = 4 / 4;
+    // Division
+    int divisible = 4 / 4;
 
-	// Modulus
-	int modulative = 5 % 2;
+    // Modulus
+    int modulative = 5 % 2;
 
-	// RELATIONAL OPERATORS
-	// Equial to
-	bool equalTo = 5 == 6; // Returns true if they are equal
+    // RELATIONAL OPERATORS
+    // Equial to
+    bool equalTo = 5 == 6; // Returns true if they are equal
 
-	// Not equal to
-	bool notEqual = 5 != 6; // Returns true if they are unequal
+    // Not equal to
+    bool notEqual = 5 != 6; // Returns true if they are unequal
 
-	// Greater than
-	bool greater = 6 > 5; // Returns true if the left operand is bigger than the right one
+    // Greater than
+    bool greater = 6 > 5; // Returns true if the left operand is bigger than the right one
 
-	// Greater or equal
-	bool greaterEquals = 6 >= 5; // Returns true if the left operand is bigger or equals the right one
+    // Greater or equal
+    bool greaterEquals = 6 >= 5; // Returns true if the left operand is bigger or equals the right one
 
-	// Less than
-	bool lesser = 6 < 5; // Returns true if the left operand is less than the right one
+    // Less than
+    bool lesser = 6 < 5; // Returns true if the left operand is less than the right one
 
-	// Less or equal
-	bool lesserEquals = 6 <= 5; // Returns true if the left operand is less or equals the right one
+    // Less or equal
+    bool lesserEquals = 6 <= 5; // Returns true if the left operand is less or equals the right one
 
-	// LOGICAL OPERATORS
-	// Logical And
-	bool LAnd = true && true; // Returns true if all of them are true
+    // LOGICAL OPERATORS
+    // Logical And
+    bool LAnd = true && true; // Returns true if all of them are true
 
-	// Logical Or
-	bool LOr = false || true; // Returns true if at least one of them is true
+    // Logical Or
+    bool LOr = false || true; // Returns true if at least one of them is true
 
-	// Logical Not
-	bool LNot = !true; // Returns true when false, returns false when true
+    // Logical Not
+    bool LNot = !true; // Returns true when false, returns false when true
 
-	// BITWISE OPERATORS
-	// Bitwise And
-	bool And = true & true; // Returns 1 if both of them are 1
-	And &= true;
+    // BITWISE OPERATORS
+    // Bitwise And
+    bool And = true & true; // Returns 1 if both of them are 1
+    And &= true;
 
-	// Bitwise Or
-	bool Or = true | false; // Returns 1 if one of them is 1
-	Or |= false;
+    // Bitwise Or
+    bool Or = true | false; // Returns 1 if one of them is 1
+    Or |= false;
 
-	// Bitwise Xor
-	bool Xor = true ^ true; // Returns 1 if both are different, {1 ^ 0, 0 ^ 1}
-	Xor ^= false;
+    // Bitwise Xor
+    bool Xor = true ^ true; // Returns 1 if both are different, {1 ^ 0, 0 ^ 1}
+    Xor ^= false;
 
-	// Bitwise Not
-	int Not = ~0b1010; // Turns 1 into 0 and 0 into 1
+    // Bitwise Not
+    int Not = ~0b1010; // Turns 1 into 0 and 0 into 1
 
-	// Bitwise Right
-	int Right = 0b1000 >> 1; // Moves the specified number of bits to the right
-	Right >>= 1;
+    // Bitwise Right
+    int Right = 0b1000 >> 1; // Moves the specified number of bits to the right
+    Right >>= 1;
 
-	// Bitwise Left
-	int Left = 0b0001 << 1; // Moves the specified number of bits to the left
-	Left <<= 1;
+    // Bitwise Left
+    int Left = 0b0001 << 1; // Moves the specified number of bits to the left
+    Left <<= 1;
 
-	// TERNARY CONDITIONAL OPERATOR
-	bool ternary = true ? false : true; // Returns the value before the : if the condition is true, otherwise it returns the value after the :
+    // TERNARY CONDITIONAL OPERATOR
+    bool ternary = true ? false : true; // Returns the value before the : if the condition is true, otherwise it returns the value after the :
 
-	// SIZEOF OPERATOR
-	int size = sizeof answer; // Returns the size in bytes
+    // SIZEOF OPERATOR
+    int size = sizeof answer; // Returns the size in bytes
 
-	// COMPOUND EXPRESSIONS
-	int length = 23;
-	int width = 42;
-	long perimeter{(2 * width) + (2 * length)}; // Here the parenthesis are optional because multiplications always take place before sums
-	long wtf{2 * (length + 3 * (width + 4 * (perimeter + 5 * perimeter)))};
+    // COMPOUND EXPRESSIONS
+    int length = 23;
+    int width = 42;
+    long perimeter{(2 * width) + (2 * length)}; // Here the parenthesis are optional because multiplications always take place before sums
+    long wtf{2 * (length + 3 * (width + 4 * (perimeter + 5 * perimeter)))};
 
-	return 0;
+    return 0;
 }

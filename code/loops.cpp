@@ -13,15 +13,15 @@ int main()
     char msg[8]{};
 
     /*
-		LOOPS
-	*/
+        LOOPS
+    */
 
     /*
-		Loop control statements
+        Loop control statements
 
-		continue; ingnores the rest of the code and goes directly to the condition
-		break; breaks out of the loop or switch
-	*/
+        continue; ingnores the rest of the code and goes directly to the condition
+        break; breaks out of the loop or switch
+    */
 
     // FOR
     for (size_t i{}; i < 12; ++i) // for(inicialization; condition; endofiteration) In a 32bit program size_t holds 32bits. In a 64bit, it holds 64bits. It's commonly used for array iterators

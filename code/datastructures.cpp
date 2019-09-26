@@ -5,8 +5,8 @@
 int main()
 {
     /*
-		DATA STRUCTURES
-	*/
+        DATA STRUCTURES
+    */
 
     // ENUMS
     enum class day // New style, using class, less error prone when casting

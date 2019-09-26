@@ -71,7 +71,7 @@ public:
 };
 
 /*
-	MULTIPLE INHERITANCE
+    MULTIPLE INHERITANCE
 */
 class Area
 {

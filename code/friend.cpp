@@ -1,3 +1,7 @@
+class friendMember{
+    void execute(regularClass rc);
+};
+
 class regularClass{
 
 private:
@@ -16,7 +20,7 @@ public:
     friend class friendClass;
     
     // FRIEND CLASS MEMBER DECLARATION
-    friend friendMember::execute(regularClass rc);
+    friend void friendMember::execute(regularClass rc);
     
 };
 
@@ -29,10 +33,7 @@ class friendClass{
 
 };
 
-class friendMember{
-    // FRIEND CLASS MEMBER DEFINITION
-    auto execute(regularClass rc){
-        rc.getPrivate();
-    }
-
-};
+// FRIEND CLASS MEMBER DEFINITION
+void friendMember::execute(regularClass rc){
+    rc.getPrivate();
+}
