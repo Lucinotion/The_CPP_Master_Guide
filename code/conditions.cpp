@@ -34,25 +34,25 @@ int main()
 	case 3: // Each of the cases in a switch statement must be constant values
 	case 4:
 	case 5:
-		std::cout << "Estás en PRIMAVERA" << std::endl;
+		std::cout << "You are in SPRING" << std::endl;
 		break; // Break statements help you break out of the switch, without them you fall into the next case until exit
 	case 6:
 	case 7:
 	case 8:
-		std::cout << "Estás en VERANO" << std::endl;
+		std::cout << "You are in SUMMER" << std::endl;
 		break;
 	case 9:
 	case 10:
 	case 11:
-		std::cout << "Estás en OTOÑO" << std::endl;
+		std::cout << "You are in AUTUMM" << std::endl;
 		break;
 	case 12:
 	case 1:
 	case 2:
-		std::cout << "Estás en INVIERNO" << std::endl;
+		std::cout << "You are in WINTER" << std::endl;
 		break;
 	default:
-		std::cout << "Estás en LA LUNA" << std::endl;
+		std::cout << "You are gonna have a bad time" << std::endl;
 		break;
 	}
 
