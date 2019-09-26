@@ -16,13 +16,17 @@ extern const double PI; // External variable declaration
 class MyMathFuncs
 {
 public:
-    static double Add(double a, double b); // Returns a + b
-
-    static double Subtract(double a, double b); // Returns a - b
-
-    static double Multiply(double a, double b); // Returns a * b
-
-    static double Divide(double a, double b); // Returns a / b
+    
+    // DOCUMENTATION for functions in c++ is written like a block comment but you need to put an extra * at the start
+    
+    //** Returns a + b */
+    static double Add(double a, double b);
+    //** Returns a - b */
+    static double Subtract(double a, double b);
+    //** Returns a * b */
+    static double Multiply(double a, double b);
+    //** Returns a / b */
+    static double Divide(double a, double b);
 };
 
 } // End of namespace MathFuncs
