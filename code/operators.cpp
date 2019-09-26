@@ -110,7 +110,7 @@ int main()
 	// SIZEOF OPERATOR
 	int size = sizeof answer; // Returns the size in bytes
 
-	// Compound expressions
+	// COMPOUND EXPRESSIONS
 	int length = 23;
 	int width = 42;
 	long perimeter{(2 * width) + (2 * length)}; // Here the parenthesis are optional because multiplications always take place before sums
