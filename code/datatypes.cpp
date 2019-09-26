@@ -1,4 +1,4 @@
-long double PI{3.1415968L}; // Global variable, default value is 0, can be accessed with ::PI
+const long double PI{3.1415968L}; // Global variable, default value is 0, can be accessed with ::PI
 
 #include <cstddef>
 
@@ -20,7 +20,7 @@ int main()
     // You can use 0bnnnn where n is a binary number to assign values to variables like 0b11111111
 
     // BOOLEANS
-    bool myBoolean = true; // 1 bit, can be true or false, 1 or 0
+    bool myBoolean = true; // 1 bit, can be true or false, 1 or 0. In memory it's actually 1 byte because nothing can be smaller than 1 byte.
 
     // CHARACTERS
     char caracter{'a'}, caracterDEC{97}, caracterHEX{'\x61'}; // 1 byte from -128 to 127 same as {signed char} In some compilers chars are unsigned.
@@ -38,18 +38,17 @@ int main()
     const char32_t *oldCahr32ConstantString{UR"~(This is a pointer to a constant CHAR32_T RAW STRING LITERAL)~"};
 
     // INTEGERS
-    short shortier{32767};                            // 2 bytes from -32768 to 32767 same as {short int / signed short / signed short int}
-    int integer{2147483647};                          // 4 bytes from -2147483648 to 2147483647 same as {signed / signed int}
-    long longInteger{2147483647L};                    // 4 bytes from -2147483648 to 2147483647 same as {long int / signed long / signed long int}
-    long long veryLongInteger{9223372036854775807LL}; // 8 bytes from -9223372036854775808 to 9223372036854775807 same as {long long int / signed long long/ signed long long int}
-
+    short shortier{32767};                            // 2 bytes from -32768 to 32767 same as {short int / signed short / signed short int}, short is supposed to be equal or smaller than a int.
+    int integer{2147483647};                          // 4 bytes from -2147483648 to 2147483647 same as {signed / signed int}, it can also be 2 or 8 bytes in some compilers.
+    long longInteger{2147483647L};                    // 4 bytes from -2147483648 to 2147483647 same as {long int / signed long / signed long int}, long is supposed to be larger or equal to int.
+    long long veryLongInteger{9223372036854775807LL}; // 8 bytes from -9223372036854775808 to 9223372036854775807 same as {long long int / signed long long/ signed long long int}, long long is supposed to be larger than int.
     // FLOATING POINT
     float singlePrecission{.1234567F};                          // 4 bytes from -2147483648 to 2147483647 up to 7 decimals of precission with no integer-part
     double doublePrecission{.123456789012345};                  // 8 bytes from -9223372036854775808 to 9223372036854775807  up to 15 decimals of precission with no integer-part
     long double doubleExtendedPrecission{.123456789012345678L}; // 8 bytes from -9223372036854775808 to 9223372036854775807  up to 18 decimals of precission with no integer-part
 
     // OTHERS
-    size_t sizeT{18446744073709551615ULL}; // Maximun size of anything, 8 bytes unsigned, from 0 up to 1844674407370955161
+    size_t sizeT{18446744073709551615ULL}; // Maximun size of anything, 8 bytes unsigned, from 0 up to 1844674407370955161, it varies depending on the architecture of the processor.
 
     //const char bigChungus[18446744073709551615]{}; // DO NOT UNCOMMENT THIS LINE, THIS ARRAY RIQUIRES A TOTAL OF 16777216TB OF RAM!!!
 
@@ -86,7 +85,7 @@ int main()
     volatile int explode; // Volatile fields are not optimized by the compiler, since they can be modified depending on the hardware specifications. I'm volatile and, you know, I can be changed by some XYZ that you're not even aware of. That XYZ could be anything. Maybe some alien outside this planet called program. Maybe some lighting, some form of interrupt, volcanoes, etc can mutate me. Maybe. You never know who is going to change me! So O you ignorant, stop playing an all-knowing god, and don't dare touch the code where I'm present. Okay?
 
     // EXTERN
-    extern int alien; // External linkage
+    extern int alien; // External linkage, used in global variables defined in header files
 
     // THREAD_LOCAL
     thread_local int localDuration; // Makes the varialbe have tread storage duration, which means that every thread will have its own variable initialized, and it can only be changed by that thread.
