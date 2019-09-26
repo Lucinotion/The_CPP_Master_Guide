@@ -21,9 +21,7 @@
 #include <algorithm> //sorting algorithm library (sort())
 
 // CUSTOM
-#include "mathematical.hpp"
-
-// Our libraries header files have to be included using " " which is relative to this file location, you can also include the full path to the header
+#include "mathematical.hpp" // Our libraries header files have to be included using " " which is relative to this file location, you can also include the full path to the header
 
 /*
     USING
