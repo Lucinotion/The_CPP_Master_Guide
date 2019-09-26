@@ -17,7 +17,7 @@
 //ERROR text, Displays error text
 //LINE number "text" ?
 
-#include <iostream> // Inlcudes the header inside the source file
+#include <iostream> // Includes the header inside the source file
 
 #define DEFCON 1                          // Defines a macro constant variable
 #define POW2(N) N *N                      // Defines a macro function
