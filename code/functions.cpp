@@ -53,7 +53,7 @@ void increaseByPointer(int *n) // Value passed by pointer
 }
 
 // DECLARATIONS
-int addOne(int n);     // This is a function declaration, separated from it's implementation
+int addOne(int n);     // This is a function declaration, separated from it's implementation/definition
 int addOne(int n = 5); // This is the default value for n
 
 /*
@@ -102,7 +102,7 @@ int main()
     return 0;
 }
 
-// IMPLEMENTATION
+// IMPLEMENTATION/DEFINITION
 int addOne(int n) // This is addOne's implementation
 {
     return n + 1;
