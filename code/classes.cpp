@@ -67,9 +67,6 @@ public:
         std::cout << GenericInt << std::endl;
     }
 
-    // FRIEND FUNCTION DECLARATION
-    friend void IncreaseDouble(exampleClass &ex); // FRIEND functions are functions that can access private and protected members of the class they are decladed in as friend.
-
     // SETTERS set the value of a variable
     exampleClass *setDouble(int d)
     {
@@ -135,12 +132,6 @@ inline bool operator<(const int &n, const exampleClass &ex)
     return n < ex.getDouble();
 }
 
-// FRIEND FUNCTION IMPLEMENTATION
-void IncreaseDouble(exampleClass &ex)
-{
-    ex.GenericDouble++;
-}
-
 int main()
 {
     exampleClass example(5);                    // Creating an instance, or object, of the class.
@@ -152,7 +143,6 @@ int main()
     std::cout << anotherExample.isReady() << std::endl;  // Accessing const members of const object.
     std::cout << example + anotherExample << std::endl;  // Using a overloaded operator.
     exampleClass::Speak();                               // Calling a static member.
-    IncreaseDouble(example);
 
     return 0;
 }
