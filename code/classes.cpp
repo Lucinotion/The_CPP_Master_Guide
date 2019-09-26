@@ -31,7 +31,7 @@ public:
     }
     exampleClass(int n) : GenericInt{static_cast<double>(n)}, GenericString{std::to_string(n)}, GenericDouble{static_cast<double>(n)}
     {
-        // This constructor has a MEMBER INITIALIZER LIST that sets GenericInt, GenericString and GenericDouble. This is the only way to set const values.
+        // This constructor has a MEMBER INITIALIZER LIST that sets GenericInt, GenericString and GenericDouble. This is the only way to set const values AND references.
     }
     exampleClass(const exampleClass &exampleclass) // Always use reference_to_const or inifnite loop will happen
     {

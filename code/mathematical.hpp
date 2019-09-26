@@ -8,7 +8,6 @@
 #ifndef MATHEMATICAL_H
 #define MATHEMATICAL_H
 
-// Start of namespace mathfunctions
 namespace MathFuncs
 {
 

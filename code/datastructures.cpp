@@ -68,14 +68,14 @@ int main()
     } cat; // Using typedef to make it easier to define, instead of 'struct cat varname' you would do 'cat varname'
 
     // UNIONS
-    union font {
+    union font { // All values inside a union share the same memory direction, so they will overlap 
         short data;
         struct
         {
             char fontSize;
             char fontWeight;
         } partitions;
-    }; // All values inside a union share the same memory direction, so they will overlap
+    };
 
     union entire4Bytes {
         int data;
@@ -86,6 +86,11 @@ int main()
             char third;
             char forth;
         } parts;
+    };
+
+    union entire8Bytes {
+        uint64_t data;
+        uint8_t values[8];
     };
 
     //____________________________________________________________________
