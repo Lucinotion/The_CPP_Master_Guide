@@ -45,7 +45,7 @@ public:
         GenericString = std::to_string(n);
     }
 
-    // DESTRUCTORS, called when the class object goes out of scope.
+    // DESTRUCTORS, called when the class object goes out of scope or when delete is called.
     ~exampleClass()
     {
         // You can also use ~exampleClass() = default; to force the compiler to make a default destructor.
@@ -62,9 +62,13 @@ public:
         std::cout << "Hello friend!";
     }
     
-    const void printInt() // CONST members cannot change the attributes of the class.
+    const int printInt() // CONST, at the beginning of the member, means that the return is a constant value.
     {
-        std::cout << GenericInt << std::endl;
+        return 42;
+    }
+
+    double veryConstantMember() const{ // COSNT, before the brackets, means that the member won´t alter the state (values) of the class.
+        return GenericDouble + 1.5;
     }
 
     // SETTERS set the value of a variable
@@ -86,7 +90,7 @@ public:
     {
         return GenericDouble;
     }
-    bool isReady() const // You should allways make const the members that don't modify the object.
+    bool isReady() const // You should ALLWAYS make const the members that don't modify the object.
     {
         return ready;
     }
