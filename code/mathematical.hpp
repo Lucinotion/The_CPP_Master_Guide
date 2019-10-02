@@ -8,7 +8,6 @@
  * @copyright Copyright Lucinotion(c) 2019
  * 
  */
-
 /*
     HEADER FILE
 */
