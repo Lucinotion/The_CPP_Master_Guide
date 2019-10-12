@@ -7,12 +7,19 @@
 .lo
 .o
 .obj
+
+# Linker files
 .ilk
 
 # Precompiled Headers
 .gch
 .pch
+
+# Debugger files
 .pdb
+
+# VSCODE Settings file
+.vscode/settings.json
 
 # Compiled Dynamic libraries
 .so
