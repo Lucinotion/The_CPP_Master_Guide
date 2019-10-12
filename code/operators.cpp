@@ -1,15 +1,29 @@
+struct Box{
+    int a = 5;
+};
+
 int main()
 {
-    /*
-        OPERATORS
-    */
-
-    // ASSIGNMENT OPERATORS
-    // Assignation
+    // CONSTRUCTOR CALL
     int answer = 42;				   //assignment notation
     int apple_count(4);				   //functional notation
     int orange_count{8};			   //uniform initialization, gives better warinings and initializes in 0
     int flowerCount{1}, scoreCount{3}; //multiple assignment with commas
+    Box my_box;
+
+    /*
+        OPERATORS
+    */
+    // NEW OPERATOR
+    int * pointer = new int(5);
+    Box * new_pointer = new Box();
+
+    // DELETE OPERATOR
+    delete pointer;
+
+    // ASSIGNMENT OPERATORS
+    // Assignation
+    answer = 42;
 
     // Additive assignation
     answer += 1;
@@ -26,7 +40,24 @@ int main()
     // Modulative assignation
     answer %= 5;
 
-    // UNARY OPERATIONS
+    // MEMORY POINTERS OPERATORS
+    // Adress operator
+    pointer = &answer;
+
+    // Dereference operator
+    apple_count = *pointer; 
+
+    // ACCESS OPERATORS
+    // Member operator
+    answer = my_box.a; // Access the member of a object
+
+    // Member of pointer operator
+    answer = new_pointer->a; // Access the member of an object from a pointer
+
+    // Pointer to function pointer???
+    // ->*
+
+    // UNARY ARITHMETIC OPERATIORS
     // Increament
     answer++;
     ++answer;
@@ -35,7 +66,11 @@ int main()
     answer--;
     --answer;
 
-    // ARITHMETIC OPERATORS
+    // Sign
+    answer = -answer;
+    answer = +answer;
+
+    // BINARY ARITHMETIC OPERATORS
     // Addition
     int additive = 1 + 1;
 
@@ -51,7 +86,7 @@ int main()
     // Modulus
     int modulative = 5 % 2;
 
-    // RELATIONAL OPERATORS
+    // RELATIONAL OR COMPARATION OPERATORS
     // Equial to
     bool equalTo = 5 == 6; // Returns true if they are equal
 
@@ -109,6 +144,16 @@ int main()
 
     // SIZEOF OPERATOR
     int size = sizeof answer; // Returns the size in bytes
+
+    // EXTRA OPERATORS
+    // Function call operator
+    // ()
+
+    // Index operator
+    // []
+
+    // Comma operator
+    // ,
 
     // COMPOUND EXPRESSIONS
     int length = 23;
