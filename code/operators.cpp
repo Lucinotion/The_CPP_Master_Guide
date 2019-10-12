@@ -54,7 +54,7 @@ int main()
     // Member of pointer operator
     answer = new_pointer->a; // Access the member of an object from a pointer
 
-    // Pointer to function pointer???
+    // Member access through pointer to member
     // ->*
 
     // UNARY ARITHMETIC OPERATIORS

@@ -7,6 +7,7 @@ private:
     // Everything after this can only be accessed by the class.
 
     double GenericDouble;
+    int intArray[10]{};
     std::string GenericString;
 
 public:
@@ -16,33 +17,39 @@ public:
     mutable bool ready = false; // MUTABLE makes variables modificable even if the object has been created as const
     static int instanceCount;   // STATIC members are independent from objects and they can be accessed without making a instance of the class. They must be accessed using the scope (::) operator. 
 
-    //  CONSTRUCTORS, called when an object of the class is created, everything after the : will execute before the constructor, this is the only way to assign constant values and references.
+    //  CONSTRUCTOR, called when an object of the class is created, everything after the : will execute before the constructor, this is the only way to assign constant values and references.
     exampleClass()
     {
         // Default constructor, empty.
         // If no constructor is defined, the compiler creates a default empty constructor
-        // You can also use exampleClass() = default; to force the compiler to make a default constructor.
+        // You can also use exampleClass() = default; to force the compiler to make a default constructor. This keeps the class as POD (Plain old data).
+        // To delete the copy constructor you can use exampleClass() = delete;
     }
+
     exampleClass(double d, std::string s)
     {
         // Constructor with arguments.
         GenericDouble = d;
         this->GenericString = s; // The this keyword is a pointer to this object, it can be ommited most of the time except when you need a function that returns the object itself.
     }
+
     exampleClass(int n) : GenericInt{static_cast<double>(n)}, GenericString{std::to_string(n)}, GenericDouble{static_cast<double>(n)}
     {
         // This constructor has a MEMBER INITIALIZER LIST that sets GenericInt, GenericString and GenericDouble. This is the only way to set const values AND references.
     }
-    exampleClass(const exampleClass &exampleclass) // This is called a copy constructor. Always use reference_to_const or inifnite loop will happen.
-    {
-        // This is a copy constructor, so that you can do exampleClass newExampleClass {anotherExampleClass}; to make a new class that is a copy of another
-        // By default the compiler already has a copy constructor that copies everything by value
-    }
+
     explicit exampleClass(double n)
     {
         // This constructor is explicit, which means that if we have a function that requires a exampleClass object, like examplify(exampleClass a), if we do examplify(23.5) this constructor won't be called and the 23.5 won't be converted into an exampleClass object
         GenericDouble = n;
         GenericString = std::to_string(n);
+    }
+
+    // COPY CONSTRUCTOR
+    exampleClass(const exampleClass & other){
+        // Default copy constructor, empty.
+        // If no copy constructor is defined, the compiler creates a default copy constructor that copies everything by value.
+        // To delete the default copy constructor you can use exampleClass(const exampleClass&) = delete; exampleClass operator=(const exampleClass&) = delete;
     }
 
     // DESTRUCTORS, called when the class object goes out of scope or when delete is called.
@@ -67,7 +74,7 @@ public:
         return 42;
     }
 
-    double veryConstantMember() const{ // COSNT, before the brackets, means that the member won´t alter the state (values) of the class.
+    double veryConstantMember() const{ // COSNT, after the parenthesis, means that the member won´t alter the state (values) of the class.
         return GenericDouble + 1.5;
     }
 
@@ -78,6 +85,7 @@ public:
 
         return this;
     }
+
     exampleClass *setString(std::string s)
     {
         GenericString = s;
@@ -90,12 +98,13 @@ public:
     {
         return GenericDouble;
     }
+
     bool isReady() const // You should ALLWAYS make const the members that don't modify the object.
     {
         return ready;
     }
 
-    // OPERATORS
+    // OPERATOR OVERLOADING
     // You can overload operators so that they work with instances of your class.
     /*
         Binary arithmetic operators +  -  *  /  %
@@ -112,19 +121,107 @@ public:
         Address-of and dereferencing operators &  *  ->  ->*
         Comma operator ,
     */
-    int operator+(const exampleClass &ex) const // Addition operation.
+
+    // Binary +
+    int operator+(const exampleClass &ex) const // Addition operator.
     {
         return ex.GenericInt + GenericInt;
     }
-    bool operator==(const exampleClass &ex) const // Equals operator.
+
+    // Binary -
+    int operator-(const exampleClass &ex) const // Subtraction operator.
+    {
+        return ex.GenericInt - GenericInt;
+    }
+
+    // Binary *
+    int operator*(const exampleClass &ex) const // Multiplication operator.
+    {
+        return ex.GenericInt * GenericInt;
+    }
+
+    // Binary /
+    int operator/(const exampleClass &ex) const // Division operator.
+    {
+        return ex.GenericInt / GenericInt;
+    }
+
+    // Binary %
+    int operator%(const exampleClass &ex) const // Modulus operator.
+    {
+        return ex.GenericInt / GenericInt;
+    }
+
+    // Unary -
+    int operator-(){
+        return -GenericInt;
+    }
+
+    // Unary +
+    int operator+()
+    {
+        return +GenericInt;
+    }
+
+    // Unary pre ++
+    exampleClass & operator++()
+    {
+        ++GenericDouble;
+        return *this;
+    }
+
+    // Unary post ++
+    exampleClass & operator++(int)
+    {
+        GenericDouble++;
+        return *this;
+    }
+
+    // Unary pre --
+    exampleClass & operator--()
+    {
+        --GenericDouble;
+        return *this;
+    }
+
+    // Unary post --
+    exampleClass & operator--(int)
+    {
+        GenericDouble--;
+        return *this;
+    }
+
+    // Index operator (for assignation)
+    int & operator [] (size_t index)
+    {
+        return intArray[index];
+    }
+
+    // Index operator [] CONST version (for getting values)
+	const int const & operator [] (size_t index) const
+    {
+        return intArray[index];
+    }
+
+    // Call operator ()
+    void operator()(const double d){ // Can have any return type and any arguments
+        GenericDouble = d;
+    }
+
+    // Equals operator (for comparing objects)
+    bool operator==(const exampleClass &ex) const
     {
         return ex.GenericInt == GenericInt;
     }
-    exampleClass *operator[](size_t index) // Index operator.
+
+    // Not equals operator (for comparing different objects)
+    bool operator!=(const exampleClass &ex) const
     {
-        return this;
+        return ex.GenericInt != GenericInt;
     }
-    operator double() const // Conversion to double operator.
+
+    // Conversion to double operator (same for any other basic type).
+    operator double() const 
     {
         return GenericDouble;
     }

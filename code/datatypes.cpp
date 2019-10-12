@@ -23,8 +23,8 @@ int main()
     bool myBoolean = true; // 1 bit, can be true or false, 1 or 0. In memory it's actually 1 byte because nothing can be smaller than 1 byte.
 
     // CHARACTERS
-    char caracter{'a'}, caracterDEC{97}, caracterHEX{'\x61'}; // 1 byte from -128 to 127 same as {signed char} In some compilers chars are unsigned.
-    wchar_t wideChar{L'a'};                                   // 2 o 4 bytes L prefix is required
+    char caracter{'a'}, caracterDEC{97}, caracterHEX{'\x61'}; // 1 byte from -128 to 127 same as {signed char} In most compilers chars are unsigned.
+    wchar_t wideChar{L'a'};                                   // 2 or 4 bytes L prefix is required
     char16_t veryLongChar{u'\xe1'};                           // 2 bytes u prefix is required
     char32_t extraLongChar{U'\xfa'};                          // 4 bytes U prefix is required
 
@@ -42,6 +42,7 @@ int main()
     int integer{2147483647};                          // 4 bytes from -2147483648 to 2147483647 same as {signed / signed int}, it can also be 2 or 8 bytes in some compilers.
     long longInteger{2147483647L};                    // 4 bytes from -2147483648 to 2147483647 same as {long int / signed long / signed long int}, long is supposed to be larger or equal to int.
     long long veryLongInteger{9223372036854775807LL}; // 8 bytes from -9223372036854775808 to 9223372036854775807 same as {long long int / signed long long/ signed long long int}, long long is supposed to be larger than int.
+    
     // FLOATING POINT
     float singlePrecission{.1234567F};                          // 4 bytes from -2147483648 to 2147483647 up to 7 decimals of precission with no integer-part
     double doublePrecission{.123456789012345};                  // 8 bytes from -9223372036854775808 to 9223372036854775807  up to 15 decimals of precission with no integer-part
@@ -98,7 +99,7 @@ int main()
     integer = singlePrecission + longInteger;
 
     // EXPLICIT OLD C style
-    integer = (int)singlePrecission + (int)longInteger;
+    integer = (int)singlePrecission + (int)longInteger; // In c++ you can also use int(var) to cast like if you where calling the int's constructor.
 
     // EXPLICIT NEW C++17 style
     integer = static_cast<signed int>(singlePrecission) + static_cast<signed int>(longInteger);
