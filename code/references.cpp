@@ -1,13 +1,14 @@
 #include <iostream>
 
+/*
+    REFERENCES
+*/
+// A reference is an alias for a variable
+// They MUST BE INITIALIZED with the variable name they referenciate
+// They CANNOT CHANGE the variable they are referencing/aliasing after inicialization
+
 int main()
 {
-    /*
-        REFERENCES
-    */
-    // A reference is an alias for a variable
-    // They MUST BE INITIALIZED with the variable name they referenciate
-    // They CANNOT CHANGE the variable they are referencing/aliasing after inicialization
     int regularInt{5};
 
     auto &refInt{regularInt}; //This is a reference to the variable created before
