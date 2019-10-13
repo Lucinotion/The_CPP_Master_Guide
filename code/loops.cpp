@@ -1,6 +1,10 @@
 #include <iostream>
 #include <cstring>
 
+/*
+    LOOPS
+*/
+
 int main()
 {
     double rainfall[12]{1.1, 2.8, 3.4, 3.7, 2.1, 2.3, 1.8, 0.0, 0.3, 0.9, 0.7, 0.5};
@@ -11,10 +15,6 @@ int main()
     int i{};
     unsigned long long factorial{1ULL};
     char msg[8]{};
-
-    /*
-        LOOPS
-    */
 
     /*
         Loop control statements

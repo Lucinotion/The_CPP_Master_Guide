@@ -1,5 +1,8 @@
 #include <iostream>
 
+/*
+    COMMAND LINE ARGUMENTS
+*/ 
 // argc is the ARGument Count, an integer
 // argv is the ARGument Values, a array of pointers of type char, the number of values is equal to argc + 1 since it saves the name of the program in argv[0]
 int main(int argc, char **argv)

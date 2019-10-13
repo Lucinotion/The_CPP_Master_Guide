@@ -2,6 +2,11 @@
 #include <vector>
 #include <memory>
 
+/*
+    POINTERS
+*/
+// A pointer contains the memory address to other specific type of data as its value
+
 long longRetFunction(short shortInteger, int integer)
 {
     return static_cast<long>(shortInteger + integer);
@@ -9,11 +14,6 @@ long longRetFunction(short shortInteger, int integer)
 
 int main()
 {
-    /*
-        POINTERS
-    */
-    // A pointer contains the memory address to other specific type of data as its value
-
     // UNIDIMENSIONAL
     int *pUninitialized;                       // Pointer to a integer, or a unidimensional array, points at garbage since it hasn't been initializated
     int *pToNull{nullptr};                     // Pointer to a integer, initialized to null, DO THIS ALLWAYS. This is the same as leaving the {} empty

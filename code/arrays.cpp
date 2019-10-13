@@ -2,14 +2,15 @@
 #include <array>
 #include <vector>
 
+/*
+    ARRAYS
+*/
+// C arrays are pointers
+//In unidimensional arrays the name of the array returns the first memory address, it can be incremmented with +, the you can access its value with * 	EX arrVar returns the first direction, #045345, BUT *arrVar returns the value stored in #045345, 'a' for example
+//In bidimensionales arrays you can access the first memory address with arrName[0], if you incremment de index you incremment the memory address and with * you can access its value	EX arrVar[0] returns the first direction, #045345, BUT *arrVar[0] returns the value stored in #045345, 'a' for example
+
 int main()
 {
-    /*
-        ARRAYS
-    */
-    // C arrays are pointers
-    //In unidimensional arrays the name of the array returns the first memory address, it can be incremmented with +, the you can access its value with * 	EX arrVar returns the first direction, #045345, BUT *arrVar returns the value stored in #045345, 'a' for example
-    //In bidimensionales arrays you can access the first memory address with arrName[0], if you incremment de index you incremment the memory address and with * you can access its value	EX arrVar[0] returns the first direction, #045345, BUT *arrVar[0] returns the value stored in #045345, 'a' for example
     // C Array declaration
     int cArray[6];      // This array can store up to 5 elements of type int, it is initialiized empty
     int cBiArray[2][3]; // This is a 2 rows by 3 cols array
@@ -31,7 +32,7 @@ int main()
     int newAssignZeroBiArray[10][10]{};
 
     /*
-    STD::ARRAY
+        STD::ARRAY
     */
     // std::array declaration
     std::array<int, 6> stdArray;
@@ -42,7 +43,7 @@ int main()
     std::array<int, 10> stdZeroArray{};
 
     /*
-    STD::VECTOR
+        STD::VECTOR
     */
     // std::vector declaration
     std::vector<int> stdVector;

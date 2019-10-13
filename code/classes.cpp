@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 
+/*
+    CLASSES
+*/
+// Classes in C++ behave just like structs, except everything is private by default.
+
 class exampleClass
 {
 private:
@@ -228,6 +233,8 @@ public:
 };
 
 // NON MEMBER OPERATOR OVERLOAD
+// When you do 5 + 6 you are executing the + operator of the 5 and passing 6 as the operator.
+// So if you want it so that 6 + 5 also works, you need to make a global operator overload.
 inline bool operator<(const int &n, const exampleClass &ex)
 {
     return n < ex.getDouble();

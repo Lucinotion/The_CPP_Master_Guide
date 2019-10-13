@@ -7,9 +7,9 @@ int main()
     /*
         DATA STRUCTURES
     */
-
     // ENUMS
-    enum class day // New style, using class, less error prone when casting
+    // Enums contain a series of values represented as an integer.
+    enum class day // New style, using class, less error prone when casting.
     {
         Monday,
         Tuesday,
@@ -20,7 +20,7 @@ int main()
         Sunday
     };
 
-    enum color // Old style, more error prone when casting
+    enum color // Old style, more error prone when casting.
     {
         Blue,
         Red,
@@ -29,7 +29,7 @@ int main()
         Green
     };
 
-    enum symbols // You can initialize the enums values like so, this way they are no longer ints from 0 to elements-1
+    enum symbols // You can initialize the enums values like so, this way they are no longer ints from 0 to elements-1.
     {
         Comma = ',',
         Dot = '.',
@@ -45,7 +45,8 @@ int main()
     } static;
 
     // STRUCTS
-    struct duck // Strucs in C++ are like classes, but everything is public by default
+    // Strucs in C++ are like classes, but everything is public by default.
+    struct duck
     {
         const char *name; // pointer to string literal (const char[])
         int age;
@@ -61,14 +62,15 @@ int main()
         }
     };
 
-    typedef struct cat // This is old C style, do not use
+    typedef struct cat // This is old C style, do NOT use.
     {
         char name[25];
         int age;
-    } cat; // Using typedef to make it easier to define, instead of 'struct cat varname' you would do 'cat varname'
+    } cat; // Using typedef to make it easier to define, instead of 'struct cat varname' you would do 'cat varname'.
 
     // UNIONS
-    union font { // All values inside a union share the same memory direction, so they will overlap 
+    // All values inside a union share the same memory direction, so they will overlap 
+    union font {
         short data;
         struct
         {

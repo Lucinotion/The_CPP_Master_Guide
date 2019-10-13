@@ -68,7 +68,6 @@ int main()
     /*
         MODIFIERS
     */
-
     // SIGN
     signed int signedInt{-15439};
     unsigned int unsignedInt{5412U};
@@ -94,7 +93,6 @@ int main()
     /*
         CASTING
     */
-
     // IMPLICIT
     integer = singlePrecission + longInteger;
 

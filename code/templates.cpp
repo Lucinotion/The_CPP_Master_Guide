@@ -1,7 +1,9 @@
 /*
     TEMPLATES
 */
-// WITH A PARAMETER OF A SPECIFIC TYPE
+// Templates allow you to use generic types in your classes so that you don't have to overload everything.
+
+// WITH A VARIABLE PARAMETER OF A SPECIFIC TYPE
 // All S get replaced by the value, 0 is the default
 // Templates get resolved at compile time.
 // Dinamically they resolve BEFORE calling the constructor, so they can be used to initialize values.
@@ -25,7 +27,9 @@ class Vector
         size_t max_index{S > 1 ? S - 1 : 0};
 };
 
-// SPECIALIZATION
+/*
+    SPECIALIZATION
+*/
 // Fully specialized, all template values are set
 template <>
 class Vector <float, 0>

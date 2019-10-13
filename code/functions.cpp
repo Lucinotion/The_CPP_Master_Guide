@@ -68,25 +68,24 @@ void increaseByPointer(int *n) // Value passed by pointer
 /*
     FUNCTION TEMPLATES
 */
-template <typename T> // T is the type that will be replaced in all T instances
+template <typename T> // T is the type that will be replaced in all T instances.
 T bigger(T a, T b)
 {
     return a > b ? a : b;
 }
 
 // WITH DEDUCTED OUTPUT
-template <class T1, class T2> // The keywords class and typename are equivalent
+template <class T1, class T2> // The keywords class and typename are equivalent.
 auto larger(T1 a, T2 b)
 {
     return a > b ? a : b;
 }
 
-
-
 /*
     INLINE FUNCTIONS
 */
-inline int larger(int m, int n) // Inline functions replace treir call by the body of the function, making short fuctions faster to execute
+// Inline functions replace treir call by the body of the function, making short fuctions faster to execute
+inline int larger(int m, int n)
 {
     return m > n ? m : n;
 }

@@ -7,7 +7,6 @@ int main()
     /*
         CONDITIONS
     */
-
     // IF
     if (x > 5)
     { // Main condition, when the content inside the () is true, the if body executes
@@ -31,11 +30,11 @@ int main()
     // SWITCH
     switch (x) // The variable must be a integer, a floating point value, a boolean, a character or a enum.
     {
-    case 3: // Each of the cases in a switch statement must be constant values
+    case 3: // Each of the cases in a switch statement must be constant values.
     case 4:
     case 5:
         std::cout << "You are in SPRING" << std::endl;
-        break; // Break statements help you break out of the switch, without them you fall into the next case until exit
+        break; // Break statements help you break out of the switch, without them you fall into the next case until exit.
     case 6:
     case 7:
     case 8:
