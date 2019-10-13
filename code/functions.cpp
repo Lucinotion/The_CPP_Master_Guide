@@ -28,6 +28,19 @@ double power(double x, int n) // This function has a return type double, and tak
     return result;
 }
 
+// WITH CONST RETURN
+const int factorial(int number) // This way you cannot do factorial(5)++, but you can assign the value to a non const variable.
+{
+    int res{1};
+
+    for(int i{}; i < number; ++i)
+    {
+        res *= i;
+    }
+
+    return res;
+}
+
 // WITHOUT RETURN VALUES
 void saySomething(const std::string s) // Functions of type void don't return anything.
 {
@@ -52,10 +65,6 @@ void increaseByPointer(int *n) // Value passed by pointer
     (*n) += 1;
 }
 
-// DECLARATIONS
-int addOne(int n);     // This is a function declaration, separated from it's implementation/definition
-int addOne(int n = 5); // This is the default value for n
-
 /*
     FUNCTION TEMPLATES
 */
@@ -64,12 +73,15 @@ T bigger(T a, T b)
 {
     return a > b ? a : b;
 }
+
 // WITH DEDUCTED OUTPUT
-template <typename T1, typename T2>
+template <class T1, class T2> // The keywords class and typename are equivalent
 auto larger(T1 a, T2 b)
 {
     return a > b ? a : b;
 }
+
+
 
 /*
     INLINE FUNCTIONS
@@ -77,6 +89,19 @@ auto larger(T1 a, T2 b)
 inline int larger(int m, int n) // Inline functions replace treir call by the body of the function, making short fuctions faster to execute
 {
     return m > n ? m : n;
+}
+
+/*
+    DEFINITION AND DECLARATION
+*/
+// DECLARATIONS
+int addOne(int n);     // This is a function declaration, separated from it's implementation/definition
+int addOne(int n = 5); // This is the default value for n
+
+// IMPLEMENTATION / DEFINITION
+int addOne(int n) // This is addOne's implementation
+{
+    return n + 1;
 }
 
 int main()
@@ -98,12 +123,9 @@ int main()
     // increase pointer
     increaseByPointer(&foobar);
 
+    int value = 5;
+    value = factorial(value);
+
     std::cout << std::endl;
     return 0;
-}
-
-// IMPLEMENTATION/DEFINITION
-int addOne(int n) // This is addOne's implementation
-{
-    return n + 1;
 }

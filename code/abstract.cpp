@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 /*
     ABSTRACT CLASS / PURELY VIRTUAL CLASS
 */
