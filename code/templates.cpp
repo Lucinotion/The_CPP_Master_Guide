@@ -10,10 +10,10 @@
 template <size_t S = 1>
 class Array
 {
-    public:
-        int elements[S > 1 ? S : 1];
-        size_t size{S > 1 ? S : 1};
-        size_t max_index{S > 1 ? S - 1 : 0};
+public:
+    int elements[S > 1 ? S : 1];
+    size_t size{S > 1 ? S : 1};
+    size_t max_index{S > 1 ? S - 1 : 0};
 };
 
 // WITH A VARIABLE TYPE
@@ -21,33 +21,33 @@ class Array
 template <class T, size_t S = 1>
 class Vector
 {
-    public:
-        T elements[S > 1 ? S : 1];
-        size_t size{S > 1 ? S : 1};
-        size_t max_index{S > 1 ? S - 1 : 0};
+public:
+    T elements[S > 1 ? S : 1];
+    size_t size{S > 1 ? S : 1};
+    size_t max_index{S > 1 ? S - 1 : 0};
 };
 
 /*
     SPECIALIZATION
 */
-// Fully specialized, all template values are set
+// FULLY SPECIALIZED, all template values are set
 template <>
 class Vector <float, 0>
 {
-    public:
-        float elements[1];
-        size_t size{1};
-        size_t max_index{0};
+public:
+    float elements[1];
+    size_t size{1};
+    size_t max_index{0};
 };
 
-// Partially specialized, some values are set
+// PARTILLY SPECIALIZED, some values are set
 template <size_t S> // In this list of parameters go everything that is not specialized.
 class Vector <float, S> // In here you should put the specific specialization and the parameters not specialized from the upper list.
 {
-    public:
-        float elements[S > 1 ? S : 1];
-        size_t size{S > 1 ? S : 1};
-        size_t max_index{S > 1 ? S - 1 : 0};
+public:
+    float elements[S > 1 ? S : 1];
+    size_t size{S > 1 ? S : 1};
+    size_t max_index{S > 1 ? S - 1 : 0};
 };
 
 int main(){
