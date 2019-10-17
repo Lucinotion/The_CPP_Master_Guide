@@ -78,6 +78,9 @@ int main()
     // CONST
     const double pi{3.14159265}; // Constant objects cannot be modified at runtime, however, if they have mutable fields, those fields can be altered.
 
+    // CONSTEXPR
+    constexpr int five = 5; // This is better than const because it cannot be casted into non const and it is replaced by its value when called. The expression gets evalued during compile time
+
     // MUTABLE
     // Mutable makes fields inside a const class or structure modificable at runtime
 

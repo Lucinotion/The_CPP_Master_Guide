@@ -34,6 +34,16 @@ int main()
     {
         std::cout << x << std::endl;
     }
+    /*
+        Translated this is the same as:
+        for(T i = begin(list); i != end(list); ++i)
+        {
+            T O = *i;
+            {
+                body
+            }
+        }
+    */
 
     // WHILE
     while (fibonacci < 317811) // while(condition) while the condition is true, the body executes.

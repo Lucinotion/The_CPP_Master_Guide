@@ -1,11 +1,12 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstdarg> // Allows oyou to use ... for giving functions a not limited number of arguments
 
 /*
     FUNCTIONS
 */
-// WITH RETURN VALUES
+    // WITH RETURN VALUES
 double power(double x, int n) // This function has a return type double, and takes arguments x and n
 {
     double result{1.0};
@@ -28,7 +29,7 @@ double power(double x, int n) // This function has a return type double, and tak
     return result;
 }
 
-// WITH CONST RETURN
+    // WITH CONST RETURN
 const int factorial(int number) // This way you cannot do factorial(5)++, but you can assign the value to a non const variable.
 {
     int res{1};
@@ -41,7 +42,7 @@ const int factorial(int number) // This way you cannot do factorial(5)++, but yo
     return res;
 }
 
-// WITHOUT RETURN VALUES
+    // WITHOUT RETURN VALUES
 void saySomething(const std::string s) // Functions of type void don't return anything.
 {
     std::cout << s << std::endl;
@@ -49,13 +50,13 @@ void saySomething(const std::string s) // Functions of type void don't return an
     return; // Even if void functions don't return any value, you can still use return to exit the function.
 }
 
-// WITH DEDUCTED OUTPUT
+    // WITH DEDUCTED OUTPUT
 auto larger(int a, int b)
 {
     return a > b ? a : b;
 }
 
-// WITH OUTPUT PARAMETERS
+    // WITH OUTPUT PARAMETERS
 void increaseByReference(int &n) // Value passed by reference
 {
     n++;
@@ -63,6 +64,24 @@ void increaseByReference(int &n) // Value passed by reference
 void increaseByPointer(int *n) // Value passed by pointer
 {
     (*n) += 1;
+}
+
+    // WITH UNLIMITED AMOUNT OF ARGUMENTS
+int addAllArguments(int n_args, ...)
+{
+    va_list list; // Make list of arguments
+    va_start(list, n_args); // Start list of arguments
+
+    int res{};
+
+    for(size_t i = 0; i < n_args; ++i)
+    {
+        res += va_arg(list, int); // Get next argument of list
+    }
+
+    va_end(list); // End list
+
+    return res;
 }
 
 /*
@@ -74,7 +93,7 @@ T bigger(T a, T b)
     return a > b ? a : b;
 }
 
-// WITH DEDUCTED OUTPUT
+    // WITH DEDUCTED OUTPUT
 template <class T1, class T2> // The keywords class and typename are equivalent.
 auto larger(T1 a, T2 b)
 {
@@ -85,9 +104,18 @@ auto larger(T1 a, T2 b)
     INLINE FUNCTIONS
 */
 // Inline functions replace treir call by the body of the function, making short fuctions faster to execute
-inline int larger(int m, int n)
+inline int xlarger(int m, int n)
 {
     return m > n ? m : n;
+}
+
+/*
+    NEW FUNCTION SYNTAX
+*/
+template<typename T1, typename T2>
+auto myNewFunction(T1 a,T2 b) -> decltype(a + b) // Declttype declares the return type based on the expression, if already know the return type just use the regular syntax, don't use -> type
+{
+    return a + b;
 }
 
 /*
@@ -124,6 +152,8 @@ int main()
 
     int value = 5;
     value = factorial(value);
+
+    addAllArguments(5, 1, 2, 3, 4, 5);
 
     std::cout << std::endl;
     return 0;

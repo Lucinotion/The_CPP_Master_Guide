@@ -50,6 +50,35 @@ public:
     size_t max_index{S > 1 ? S - 1 : 0};
 };
 
+/*
+    VARIADIC TEMPLATES
+*/
+template<typename T>
+void print(T a)
+{
+    print(5, "hola", 0);
+}
+
+template<typename T, typename ... ARGS> // ... is a list of typenames called ARGS
+void print(T a, ARGS ... args)
+{
+    print(args ...);
+}
+
+// TUPLE
+template<typename ... TYPES>
+class tuple
+{
+
+};
+
+template<typename T, typename ... TYPES>
+class tuple<T, TYPES ...> : public tuple<TYPES ...>
+{
+
+};
+
+
 int main(){
     Array<10>         myArray{};   // Calls template
     Vector<int, 5>    myVector1{}; // Calls base template
