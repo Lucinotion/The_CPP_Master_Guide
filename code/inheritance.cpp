@@ -15,7 +15,7 @@ class B : public A
 class C : protected B
 {
 };
-class D : private C // By default is private
+class D final : private C // By default is always private, adding final means that the class can no longer be inherited.
 {
 };
 

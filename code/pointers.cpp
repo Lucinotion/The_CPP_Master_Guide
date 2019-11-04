@@ -12,6 +12,11 @@ long longRetFunction(short shortInteger, int integer)
     return static_cast<long>(shortInteger + integer);
 }
 
+struct x
+{
+    int v, w, y;
+};
+
 int main()
 {
     // UNIDIMENSIONAL
@@ -29,6 +34,11 @@ int main()
     // Real
     double(*pPDouble)[4]{new double[5][4]{}}; // A pointer to a bidimensional array of type double, Only the 5, the one that indicates the amount of rows the array will have, can be set at runtime
     auto pPAutoDouble{new double[5][4]{}};    // With the auto you don't have to remember the other weird syntax
+
+    // RELATIVE
+    x my_x{1,2,3};
+    int x::*p = &x::y; // This pointer can only point to values of the struct x, here it's set to the y member
+    my_x.*p = 5;       // This can be used to relatively access members of my_x using the p pointer, this is the same as doing my_x.y = 5;
 
     // TO FUNCTION
     // Definition

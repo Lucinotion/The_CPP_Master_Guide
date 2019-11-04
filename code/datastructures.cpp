@@ -9,7 +9,7 @@ int main()
     */
     // ENUMS
     // Enums contain a series of values represented as an integer.
-    enum class day // New style, using class, less error prone when casting.
+    enum class day // New style, using class, less error prone when casting. You need to use :: to access the members in this case.
     {
         Monday,
         Tuesday,
@@ -20,7 +20,7 @@ int main()
         Sunday
     };
 
-    enum color // Old style, more error prone when casting.
+    enum color // Old style, more error prone when casting. You don't need to use :: to access the members.
     {
         Blue,
         Red,
@@ -42,7 +42,7 @@ int main()
         LOADING,
         RUNNING,
         FINISHED
-    } static;
+    } static state;
 
     // STRUCTS
     // Strucs in C++ are like classes, but everything is public by default.

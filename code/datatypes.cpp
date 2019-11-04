@@ -1,4 +1,5 @@
 const long double PI{3.1415968L}; // Global variable, default value is 0, can be accessed with ::PI
+constexpr long double pi{3.14159265359L}; // Global constant expression, this gets evaluated at compile time, so it's faster.
 
 #include <cstddef>
 
