@@ -19,7 +19,7 @@
 *.pdb
 
 # VSCODE Settings file
-.vscode/settings.json
+.vscode/*
 
 # Compiled Dynamic libraries
 *.so
