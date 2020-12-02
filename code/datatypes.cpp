@@ -10,6 +10,11 @@ using veryBigNumber = unsigned long long; // This is the new way to define an al
 typedef long double veryBigFloats;        // This is the old way of defining an alias name for initializing long doubles
 #define END ;                             // Using preprocesses you can also define symbols or values, now writing END is the same as pressing ;
 
+/*
+    INLINE DATATYPES
+*/
+inline int globalVariable = 5; // This is the easy way of making global variables as of C++17
+
 int main()
 {
     /* 
