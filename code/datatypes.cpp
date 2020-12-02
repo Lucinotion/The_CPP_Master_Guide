@@ -35,7 +35,7 @@ int main()
     char32_t extraLongChar{U'\xfa'};                          // 4 bytes U prefix is required
 
     // STRINGS
-    char oldString[]{"This is a old C STYLE STRING"};
+    char oldString[]{"This is a old C STYLE STRING"};         // In c the strings are just character arrays
     const char *oldConstantString{"This is a pointer to a constant C STYLE STRING"};
     // Raw strings
     const char *oldCharConstantString{R"~(This is a pointer to a constant RAW STRING LITERAL)~"}; // Raw string literals don't need scape sequences for special characters like \ they do need a delimitator for " and )(. I like to use ~ as the delimitator
