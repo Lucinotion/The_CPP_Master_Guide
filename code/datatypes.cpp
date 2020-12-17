@@ -31,8 +31,9 @@ int main()
     // CHARACTERS
     char caracter{'a'}, caracterDEC{97}, caracterHEX{'\x61'}; // 1 byte from -128 to 127 same as {signed char} In most compilers chars are unsigned.
     wchar_t wideChar{L'a'};                                   // 2 or 4 bytes L prefix is required
-    char16_t veryLongChar{u'\xe1'};                           // 2 bytes u prefix is required
-    char32_t extraLongChar{U'\xfa'};                          // 4 bytes U prefix is required
+    char16_t veryLongChar{u'\xE1'};                           // 2 bytes u prefix is required
+    char32_t extraLongChar{U'\xFA'};                          // 4 bytes U prefix is required
+    auto utf8Character{u8'\xC3B1'};                           // Size is determined by how big de unicode code of the character is when encoded in utf8
 
     // STRINGS
     char oldString[]{"This is a old C STYLE STRING"};         // In c the strings are just character arrays
@@ -42,7 +43,7 @@ int main()
     const wchar_t *oldWCharConstantString{LR"~(This is a pointer to a constant WCHAR_T RAW STRING LITERAL)~"};
     const char16_t *oldChar16ConstantString{uR"~(This is a pointer to a constant CHAR16_T RAW STRING LITERAL)~"};
     const char32_t *oldCahr32ConstantString{UR"~(This is a pointer to a constant CHAR32_T RAW STRING LITERAL)~"};
-
+    
     // INTEGERS
     short shortier{32767};                            // 2 bytes from -32768 to 32767 same as {short int / signed short / signed short int}, short is supposed to be equal or smaller than a int.
     int integer{2147483647};                          // 4 bytes from -2147483648 to 2147483647 same as {signed / signed int}, it can also be 2 or 8 bytes in some compilers.
